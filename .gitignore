@@ -37,8 +37,6 @@ SEN12MS_CR_SARColorData/
 sen12ms-cr/
 *.tif
 !demo/sample_*.tif
-# Keep the committed SEN12MS-CR working set in git history (by request)
-!data/**/*.tif
 
 *.pth
 *.pt
@@ -49,6 +47,7 @@ sam_masks/
 *.pkl
 
 /tmp/
+figures/
 output/
 NoColorOutput/
 LinearRegressionOutput/
