@@ -61,20 +61,32 @@ def _pick_device(device):
 
 def build_sam_generator(sam_checkpoint: str, model_type: str = "vit_h",
                         device: str = None, points_per_side: int = 32,
-                        min_mask_region_area: int = 50):
+                        min_mask_region_area: int = 50,
+                        pred_iou_thresh: float = 0.86,
+                        stability_score_thresh: float = 0.92,
+                        crop_n_layers: int = 0,
+                        crop_n_points_downscale_factor: int = 1,
+                        box_nms_thresh: float = 0.7):
     """Load a SAM model once and wrap it in an automatic mask generator.
-    Cached by config so repeated calls don't reload the 2.4 GB checkpoint."""
+    Cached by config so repeated calls don't reload the 2.4 GB checkpoint.
+    Defaults match SAM's; lower the thresholds / add crop layers for many more
+    (finer) masks."""
     from segment_anything import sam_model_registry, SamAutomaticMaskGenerator
     dev = _pick_device(device)
-    key = (sam_checkpoint, model_type, dev, points_per_side, min_mask_region_area)
+    key = (sam_checkpoint, model_type, dev, points_per_side, min_mask_region_area,
+           pred_iou_thresh, stability_score_thresh, crop_n_layers,
+           crop_n_points_downscale_factor, box_nms_thresh)
     if key not in _SAM_GENERATORS:
         sam = sam_model_registry[model_type](checkpoint=sam_checkpoint).to(dev)
         _SAM_GENERATORS[key] = SamAutomaticMaskGenerator(
             sam,
             points_per_side=points_per_side,
-            pred_iou_thresh=0.86,
-            stability_score_thresh=0.92,
+            pred_iou_thresh=pred_iou_thresh,
+            stability_score_thresh=stability_score_thresh,
             min_mask_region_area=min_mask_region_area,
+            crop_n_layers=crop_n_layers,
+            crop_n_points_downscale_factor=crop_n_points_downscale_factor,
+            box_nms_thresh=box_nms_thresh,
         )
     return _SAM_GENERATORS[key]
 

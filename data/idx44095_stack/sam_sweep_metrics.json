@@ -1,0 +1,90 @@
+{
+  "pps16 conservative": {
+    "n_masks": 60,
+    "seconds": 17.5,
+    "categories": {
+      "vegetation": 16,
+      "other": 30,
+      "water": 5,
+      "building": 9
+    },
+    "NRMSE": 0.3418,
+    "SAM": 0.1211,
+    "Q4": 0.2772,
+    "EdgeF1": 0.1399
+  },
+  "pps32 default": {
+    "n_masks": 109,
+    "seconds": 36.4,
+    "categories": {
+      "vegetation": 30,
+      "other": 49,
+      "water": 4,
+      "building": 25,
+      "road": 1
+    },
+    "NRMSE": 0.3417,
+    "SAM": 0.121,
+    "Q4": 0.2797,
+    "EdgeF1": 0.1955
+  },
+  "pps32 keep-small": {
+    "n_masks": 109,
+    "seconds": 36.9,
+    "categories": {
+      "vegetation": 30,
+      "other": 49,
+      "water": 4,
+      "building": 25,
+      "road": 1
+    },
+    "NRMSE": 0.3417,
+    "SAM": 0.121,
+    "Q4": 0.2797,
+    "EdgeF1": 0.1954
+  },
+  "pps32 aggressive": {
+    "n_masks": 224,
+    "seconds": 46.8,
+    "categories": {
+      "vegetation": 78,
+      "other": 87,
+      "road": 5,
+      "water": 7,
+      "building": 47
+    },
+    "NRMSE": 0.3423,
+    "SAM": 0.1211,
+    "Q4": 0.2785,
+    "EdgeF1": 0.2785
+  },
+  "pps64 aggressive": {
+    "n_masks": 320,
+    "seconds": 142.6,
+    "categories": {
+      "vegetation": 111,
+      "other": 127,
+      "road": 7,
+      "water": 8,
+      "building": 67
+    },
+    "NRMSE": 0.342,
+    "SAM": 0.1207,
+    "Q4": 0.2816,
+    "EdgeF1": 0.2915
+  },
+  "SLIC n=140 (ref)": {
+    "n_masks": 41,
+    "seconds": 0.0,
+    "categories": {
+      "vegetation": 28,
+      "other": 8,
+      "water": 2,
+      "building": 3
+    },
+    "NRMSE": 0.3478,
+    "SAM": 0.1275,
+    "Q4": 0.272,
+    "EdgeF1": 0.1456
+  }
+}

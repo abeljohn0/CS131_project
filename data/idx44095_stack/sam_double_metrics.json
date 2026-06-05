@@ -1,0 +1,15 @@
+{
+  "n_masks": 841,
+  "seconds": 337.7,
+  "categories": {
+    "other urban area": 309,
+    "other": 318,
+    "road": 13,
+    "water": 34,
+    "building": 167
+  },
+  "NRMSE": 0.3433,
+  "SAM": 0.1202,
+  "Q4": 0.283,
+  "EdgeF1": 0.3839
+}

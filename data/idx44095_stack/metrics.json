@@ -1,0 +1,17 @@
+{
+  "id": 44095,
+  "n_sam_masks": 60,
+  "categories": {
+    "vegetation": 16,
+    "other": 30,
+    "water": 5,
+    "building": 9
+  },
+  "n_train_patches": 11,
+  "metrics_vs_gt": {
+    "NRMSE": 0.3418222034050083,
+    "SAM": 0.12113536894321442,
+    "Q4": 0.27719455692052886,
+    "EdgeF1": 0.13985204337829785
+  }
+}
